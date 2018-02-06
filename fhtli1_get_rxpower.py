@@ -2,14 +2,19 @@
 # Jorge Luiz Taioque
 # jorgeluiztaioque at gmail dot com 
 #
-# Usege fhtl1.py [ip_tl1_server] [ip_olt] [pon_port]
-# use last two numbers of pon port link 1-1
+# Usege fhtli1_get_rxpower.py  [ip_tl1_server] [ip_olt] [pon_slot-pon_port]
+# use last two numbers of pon port like 1-1
 #
 #
 
 import time
 import sys
 from socket import *
+
+#Dados to connect TL1
+user='1'
+pass='1'
+
 
 tl1host = sys.argv[1]
 tl1port = 3337
@@ -19,11 +24,10 @@ name = []
 onuid = []
 
 
-
 #connecting socket on TL1 service
 s = socket(AF_INET, SOCK_STREAM)    
 s.connect((tl1host, tl1port))
-s.send('LOGIN:::CTAG::UN=1,PWD=1;')
+s.send('LOGIN:::CTAG::UN='+user+',PWD='+pass+';')
 time.sleep(2)
 
 	
