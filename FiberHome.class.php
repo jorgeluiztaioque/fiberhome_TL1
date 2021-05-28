@@ -1,5 +1,7 @@
 <?php
 /*
+COMMAND LIST DOCUMENTATION
+
 
 # LOGIN
 LOGIN:::CTAG::UN=login,PWD=senha;
